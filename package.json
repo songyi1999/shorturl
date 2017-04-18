@@ -21,6 +21,8 @@
     },
     "homepage": "https://github.com/songyi1999/shorturl#readme",
     "dependencies": {
-        "express": "^4.15.2"
+        "express": "^4.15.2",
+        "mongodb": "^2.2.26"
+
     }
 }

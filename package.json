@@ -1,0 +1,26 @@
+{
+    "name": "shorturl",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"error\"",
+        "start": "node index"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/songyi1999/shorturl.git"
+    },
+    "keywords": [
+        "shorturl"
+    ],
+    "author": "songyi",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/songyi1999/shorturl/issues"
+    },
+    "homepage": "https://github.com/songyi1999/shorturl#readme",
+    "dependencies": {
+        "express": "^4.15.2"
+    }
+}

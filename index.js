@@ -29,7 +29,7 @@ app.get('/:site', function(req, res) {
             if (err) throw err
             client.query("select site from sorturl where id=" + Number(site), function(err, re) {
                 if (err) throw err;
-                var u = re.rows;
+                var u = re.rows[0].site;
                 console.log(u);
                 res.append("Location", "http://" + u);
                 res.send("");

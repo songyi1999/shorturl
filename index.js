@@ -32,7 +32,7 @@ app.get('/:site', function(req, res) {
                 var u = re.rows[0].site;
                 console.log(u);
 
-                res.send('<html><script>window.location="' + u + '"</script></html>');
+                res.send('<html><script>window.location="http://' + u + '"</script></html>');
 
             })
         });

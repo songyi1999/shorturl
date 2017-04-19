@@ -13,9 +13,9 @@ app.get('/:site', function(req, res) {
             if (err) throw err
             client.query("insert into sorturl (site) values ('" + site + "') ", function(err, result) {
                 if (err) throw err;
-                client.query("select max(id) from sorturl", function(err, res) {
+                client.query("select max(id) from sorturl", function(err, re) {
                     if (err) throw err;
-                    var id = res.rows;
+                    var id = re.rows;
                     out = {};
                     out.original_url = site;
                     out.short_url = req.protocol + '://' + req.get('host') + "/" + id;
@@ -27,9 +27,9 @@ app.get('/:site', function(req, res) {
     } else if (Number(site)) {
         pg.connect(process.env.DATABASE_URL, function(err, client, done) {
             if (err) throw err
-            client.query("select site from sorturl where id=" + Number(site), function(err, res) {
+            client.query("select site from sorturl where id=" + Number(site), function(err, re) {
                 if (err) throw err;
-                var u = res.rows;
+                var u = re.rows;
                 res.append("Location", "http://" + u);
                 res.send("");
             })

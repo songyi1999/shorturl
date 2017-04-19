@@ -31,8 +31,8 @@ app.get('/:site', function(req, res) {
                 if (err) throw err;
                 var u = re.rows[0].site;
                 console.log(u);
-                res.append("Location", "http://" + u);
-                res.send("");
+                res.location("http://" + u);
+
             })
         });
     } else {

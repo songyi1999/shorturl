@@ -15,7 +15,7 @@ app.get('/:site', function(req, res) {
                 if (err) throw err;
                 client.query("select max(id) from sorturl", function(err, re) {
                     if (err) throw err;
-                    var id = re.rows;
+                    var id = JSON.stringify(re.rows);
                     out = {};
                     out.original_url = site;
                     out.short_url = req.protocol + '://' + req.get('host') + "/" + id;

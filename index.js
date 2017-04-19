@@ -31,7 +31,7 @@ app.get('/:site', function(req, res) {
                 if (err) throw err;
                 var u = re.rows[0].site;
                 console.log(u);
-                res.setHeader('Location', u);
+                res.setHeader('Location', "http://" + u);
                 res.location("http://" + u);
 
             })

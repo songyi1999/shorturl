@@ -22,39 +22,20 @@ app.get('/:site', function(req, res) {
                     res.append("Content-Type", "application/json");
                     res.send(JSON.stringify(out));
                 })
-
             });
-
-
-
-
-
         });
     } else if (Number(site)) {
         pg.connect(process.env.DATABASE_URL, function(err, client, done) {
             if (err) throw err
-
             client.query("select site from sorturl where id=" + Number(site), function(err, res) {
                 if (err) throw err;
                 var u = res.rows;
                 res.append("Location", "http://" + u);
-
                 res.send("");
             })
-
-
         });
-
-
-    } else
-
-
-    {
+    } else {
         res.end("Not a website");
     }
-
-    res.end(JSON.stringify(siteurl));
-
-
 })
 app.listen(process.env.PORT || 5000);
